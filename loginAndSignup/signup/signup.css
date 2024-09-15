@@ -1,0 +1,229 @@
+/* Simplified CSS for signup page */
+
+/* Wrapper to manage layout and responsiveness */
+.full-page-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.centre-page-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* padding: 1rem; Added padding for mobile */
+}
+
+.login-outer {
+    height: auto; /* Changed from fixed height to auto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px; /* Ensure max width for larger screens */
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Changed from percentage to auto */
+    width: 100%;
+    text-align: center;
+    padding: 0 10px; /* Added padding */
+}
+
+.heading h1 {
+    font-size: 2rem; /* Default font size for desktop */
+}
+
+.heading h1 span {
+    color: #597cdb; /* Adjust color as needed */
+}
+
+.input-details {
+    padding-top: 2rem;
+    height: auto; /* Changed from percentage to auto */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(228, 221, 221, 0.8);
+}
+
+.input-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-field {
+    width: 100%;
+}
+
+.input-field label {
+    font-size: 14px; /* Default label font size */
+    color: #333; /* Adjust color as needed */
+}
+
+.form-control {
+    height: 40px;
+    width: 100%; /* Adjusted to 100% for better responsiveness */
+    border-radius: 8px;
+    border: 1px solid #929393;
+    padding-left: 14px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.submit-button {
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    background-color: #6f4fdd;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.login-with-gf {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.with-login {
+    width: 48%;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.use-email {
+    height: auto; /* Changed from fixed height to auto */
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.create-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-signup {
+    color: #1b1bf3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.verify-email {
+    height: auto; /* Changed from fixed height to auto */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #bca4a4;
+}
+
+/* Responsive Design */
+
+/* Mobile devices (phones) */
+@media (max-width: 480px) {
+    .login-outer {
+        width: 100%;
+        /* padding: 0.5rem; Padding for mobile */
+    }
+
+    .heading h1 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+    .form-control {
+        height: 35px; /* Adjust input field height for smaller screens */
+        font-size: 14px; /* Adjust font size inside input fields */
+    }
+
+    .submit-button {
+        height: 45px; /* Adjust button height for smaller screens */
+        font-size: 18px; /* Adjust button font size for smaller screens */
+    }
+
+    .login-with-gf {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .with-login {
+        width: 100%;
+        margin-bottom: 10px; /* Add spacing between buttons on mobile */
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-outer {
+        width: 100%;
+    }
+
+    .heading h1 {
+        font-size: 1.75rem; /* Adjust font size for tablets */
+    }
+
+    .form-control {
+        height: 38px; /* Adjust input field height for tablets */
+        font-size: 15px; /* Adjust font size inside input fields */
+    }
+
+    .submit-button {
+        height: 48px; /* Adjust button height for tablets */
+        font-size: 19px; /* Adjust button font size for tablets */
+    }
+
+    .login-with-gf {
+        flex-direction: row;
+    }
+}
+
+/* Desktop devices */
+@media (min-width: 769px) {
+    .login-outer {
+        width: 100%; /* Fixed width for larger screens */
+
+    }
+
+    .heading h1 {
+        font-size: 2rem; /* Larger font size for desktop */
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .submit-button {
+        height: 50px;
+        font-size: 20px;
+    }
+}

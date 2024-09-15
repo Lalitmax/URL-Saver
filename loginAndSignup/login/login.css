@@ -1,0 +1,240 @@
+/* Simplified CSS for login page */
+
+/* Wrapper to manage layout and responsiveness */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.full-page-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.centre-page-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 450px; /* Ensure max width for larger screens */
+    margin: auto;
+    padding: 1rem; /* Padding for mobile */
+}
+
+.min-height-900 {
+    min-height: 900px;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-blue {
+    color: #2196f3; /* Adjust color as needed */
+}
+
+.container {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.header {
+    height: auto; /* Changed from fixed percentage to auto for responsiveness */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-details {
+    padding-top: 2rem;
+    height: auto; /* Changed from fixed percentage to auto for responsiveness */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(228, 221, 221, 0.8);
+}
+
+.input-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Gap between label and input */
+}
+
+.form-control {
+    height: 40px;
+    width: 100%; /* Ensures input takes full width of its container */
+    border-radius: 8px;
+    border: 1px solid #929393;
+    padding-left: 14px;
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}
+
+.submit-button {
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    background-color: #6f4fdd;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.use-email {
+    height: auto; /* Changed from fixed height to auto */
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-with-gf {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.with-login {
+    width: 48%;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.create-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-signup {
+    color: #1b1bf3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.verify-email {
+    height: auto; /* Changed from fixed height to auto */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #bca4a4;
+}
+
+/* Responsive Design */
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 0.5rem;
+    }
+
+    .centre-page-section {
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+
+    .input-form {
+        width: 100%;
+    }
+
+    .input-details {
+        padding: 0.5rem;
+    }
+
+    .submit-button {
+        height: 45px; /* Adjust button height for smaller screens */
+        font-size: 18px; /* Adjust button font size for smaller screens */
+    }
+
+    .login-with-gf {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .with-login {
+        width: 100%;
+        margin-bottom: 10px; /* Add spacing between buttons on mobile */
+    }
+}
+
+/* Tablet devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .wrapper {
+        padding: 1rem;
+    }
+
+    .centre-page-section {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .input-details {
+        padding-top: 1.5rem;
+    }
+
+    .submit-button {
+        height: 48px; /* Adjust button height for tablets */
+        font-size: 19px; /* Adjust button font size for tablets */
+    }
+
+    .login-with-gf {
+        flex-direction: row;
+    }
+}
+
+/* Desktop devices (769px and up) */
+@media (min-width: 769px) {
+    .wrapper {
+        padding: 1rem;
+    }
+
+    .centre-page-section {
+        max-width: 450px; /* Fixed width for larger screens */
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .submit-button {
+        height: 50px;
+        font-size: 20px;
+    }
+}
