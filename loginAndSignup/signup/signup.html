@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link href="signup.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
+
 <body>
+    <header>
+        <div class="header-container">
+            <nav class="nav-bar">
+
+                <a href="/index.html" class="left-logo">
+                    <h1>URLSaver</h1>
+                </a>
+                <div class="right-menu">
+
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a onclick="toggleModal()" href="#">Add</a></li>
+                        <li><a href="#">Edit URL</a></li>
+                    </ul>
+
+
+                    <div class="sign-dark">
+                        <a href="/loginAndSignup/login/login.html" class="login"
+                            onclick="window.location.href = 'login.html';">Login</a>
+                        <!-- <a href="#" class="dark"><i class='bx bxs-moon' id="moon"></i></a> -->
+
+                    </div>
+                </div>
+                <i onclick="myMenu()" class='bx bx-menu' id="menu-icon"></i>
+
+            </nav>
+
+        </div>
+    </header>
     <div class="full-page-section">
         <div class="centre-page-section">
             <div class="login-outer">
                 <div class="heading">
-                    <h1>Create a <span>free account</span></h1>
-                 </div>
+                    <h1 style="text-align: center;">Create a <span>free account</span></h1>
+                </div>
                 <div class="input-details">
-        
+
                     <form class="input-form" action="#" method="POST">
                         <div class="input-field">
                             <label for="name">Name</label>
@@ -22,20 +54,24 @@
                         </div>
                         <div class="input-field">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email Address">
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Enter your email Address">
                         </div>
                         <div class="input-field">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter a new password">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Enter a new password">
                         </div>
                         <button class="submit-button" type="submit">Sign Up</button>
                     </form>
                     <div class="create-account">
-                        <p>Already Sign Up? <a href="/login" class="create-signup">Login</a></p>
+                        <p>Already Sign Up? <a href="/loginAndSignup/login/login.html" class="create-signup">Login</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

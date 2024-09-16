@@ -10,6 +10,7 @@
     <title>URLSaver</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/addUrlDialog/addUrl.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
@@ -20,22 +21,22 @@
         <div class="header-container">
             <nav class="nav-bar">
 
-                <a href="Home" class="left-logo">
+                <a href="/index.html" class="left-logo">
                     <h1>URLSaver</h1>
                 </a>
                 <div class="right-menu">
 
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Add</a></li>
-                        <li><a href="#">URLs</a></li>
-                        <li><a href="#">About US</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a onclick="toggleModal()" href="#">Add</a></li>
+                        <li><a href="#">Edit URL</a></li>
                     </ul>
 
 
                     <div class="sign-dark">
-                        <a href="#login" class="login" onclick="window.location.href = 'login.html';">Login</a>
-                        <a href="#" class="dark"><i class='bx bxs-moon' id="moon"></i></a>
+                        <a href="/loginAndSignup/login/login.html" class="login"
+                            onclick="window.location.href = 'login.html';">Login</a>
+                        <!-- <a href="#" class="dark"><i class='bx bxs-moon' id="moon"></i></a> -->
 
                     </div>
                 </div>
@@ -51,21 +52,45 @@
         <div class="content-list">
             <section class="hero-section">
                 <div class="iamMain">
-                   <h1 style="color: white;">I Am Main</h1>
+                    <h1 style="color: white;">I Am Main</h1>
                 </div>
-                
+
             </section>
 
 
         </div>
     </div>
+    <!-- ********************************************* Dialgo add RUl Content ***********************************************************-->
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Add</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-content">
+                <div class="input-group">
+                    <label for="text" class="input-label">URL</label>
+                    <input type="text" id="email" class="input-field" placeholder="Paste URL" required>
+                </div>
+                <div class="input-group">
+                    <label for="password" class="input-label">Add keyword</label>
+                    <input type="password" id="password" class="input-field" placeholder="Add Keyword">
+                </div>
+
+                <button class="btn-submit">Save</button>
+
+            </div>
+        </div>
+    </div>
+
+
     <!-- ********************************************* Footer Content ***********************************************************-->
 
     <footer>
         <div class="footer-content">
             <div class="urlSaver wd">
                 <h3>URLSaver</h3>
-                <p>Your go-to tool for saving and managing your favorite URLs with personalized keywords. Save, search, and organize your links efficiently.</p>
+                <p>Your go-to tool for saving and managing your favorite URLs with personalized keywords. Save, search,
+                    and organize your links efficiently.</p>
                 <div class="iii">
                     <i class='bx bx-link'></i>
                     <i class='bx bx-tag'></i>
@@ -82,27 +107,30 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
+            <hr>
             <div class="contact wd h2-exf">
                 <h3>Contact Us</h3>
                 <a href="mailto:support@urlsaver.com">support@urlsaver.com</a>
                 <p>+1 234-567-890</p>
             </div>
-            <div class="follow wd h2-exf">
-                <h3>Media Link</h3>
-                <div class="social-media">
-                    <a href="https://github.com/URLSaver"><i class="bx bxl-github"></i>GitHub</a>
-                    <a href="https://twitter.com/URLSaver"><i class="bx bxl-twitter"></i>Twitter</a>
-                    <a href="https://instagram.com/URLSaver"><i class="bx bxl-instagram-alt"></i>Instagram</a>
-                    <a href="https://www.linkedin.com/company/urlsaver"><i class="bx bxl-linkedin"></i>LinkedIn</a>
-                </div>
-            </div>
+
         </div>
         <div class="reserved-footer">
-            <p style="color: #fff; font-weight: bold;" class="foo-p">&copy; 2023 <a href="#home"><span>URLSaver</span></a>. All Rights Reserved.</p>
+            <p style="color: #fff; font-weight: bold;" class="foo-p">&copy; 2023 <a
+                    href="#home"><span>URLSaver</span></a>. All Rights Reserved.</p>
         </div>
     </footer>
+
+
+
     <script src="./js/script.js"></script>
-    
- </body>
+    <script>
+        function toggleModal() {
+            const modal = document.querySelector('.modal');
+            modal.classList.toggle('show');
+        }
+    </script>
+
+</body>
 
 </html>

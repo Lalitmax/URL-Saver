@@ -1,6 +1,17 @@
 /* Simplified CSS for signup page */
 
 /* Wrapper to manage layout and responsiveness */
+
+:root {
+    --main-color: rgb(14, 41, 84);
+    --second-color: rgb(31, 110, 140);
+    --text-color: #FFFFFF;
+    --second-text-color: rgb(136, 136, 223);
+    --footer-text-color: #A2B8EE;
+}
+
+
+
 .full-page-section {
     display: flex;
     align-items: center;
@@ -29,6 +40,7 @@
 }
 
 .heading {
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,12 +55,18 @@
     font-size: 2rem; /* Default font size for desktop */
 }
 
+ 
 .heading h1 span {
-    color: #597cdb; /* Adjust color as needed */
+    background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, #2196f3 100%);
+    -webkit-background-clip: text; /* For WebKit browsers */
+    background-clip: text;
+    color: transparent; /* Hide text color to show gradient */
 }
+
 
 .input-details {
     padding-top: 2rem;
+    padding-bottom: 2rem;
     height: auto; /* Changed from percentage to auto */
     width: 100%;
     display: flex;
@@ -88,10 +106,11 @@
 
 .submit-button {
     height: 50px;
+    margin-bottom: 20px;
     width: 100%;
     border-radius: 8px;
     border: 1px solid #fff;
-    background-color: #6f4fdd;
+    background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, #2196f3 100%);
     color: #fff;
     font-size: 20px;
     cursor: pointer;

@@ -5,13 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="login.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <header>
+        <div class="header-container">
+            <nav class="nav-bar">
+
+                <a href="/index.html" class="left-logo">
+                    <h1>URLSaver</h1>
+                </a>
+                <div class="right-menu">
+
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a onclick="toggleModal()" href="#">Add</a></li>
+                        <li><a href="#">Edit URL</a></li>
+                    </ul>
+
+
+                    <div class="sign-dark">
+                        <a href="/loginAndSignup/login/login.html" class="login"
+                            onclick="window.location.href = 'login.html';">Login</a>
+                        <!-- <a href="#" class="dark"><i class='bx bxs-moon' id="moon"></i></a> -->
+
+                    </div>
+                </div>
+                <i onclick="myMenu()" class='bx bx-menu' id="menu-icon"></i>
+
+            </nav>
+
+        </div>
+    </header>
+
+
     <div class="full-page-section">
+        
+        
         <div class="centre-page-section min-height-900">
             <div class="container">
+                
                 <div class="header font-bold">
-                    <h1>Sign in to <span class="text-blue">E Commerce</span></h1>
+                    <h1 style="text-align: center;">Sign in to <span class="text-blue">E Commerce</span></h1>
                 </div>
                 <div class="input-details">
                     <form class="input-form" action="#" method="POST">
@@ -27,7 +62,7 @@
                     </form>
                    
                     <div class="create-account">
-                        <p>Don't have an account? <a href="/signUp" class="create-signup">Create Account</a></p>
+                        <p>Don't have an account? <a href="/loginAndSignup/signup/signup.html" class="create-signup">Create Account</a></p>
                     </div>
                      
                 </div>
