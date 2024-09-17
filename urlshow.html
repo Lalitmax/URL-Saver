@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Capture</title>
+</head>
+<body>
+    <button id="captureBtn">Capture Screenshot</button>
+    <div id="content">
+        <!-- Your content goes here. For example: -->
+        <h1>Hello World!</h1>
+        <p>This is the content to capture.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('captureBtn').addEventListener('click', function () {
+            html2canvas(document.getElementById('content')).then(canvas => {
+                // Append the canvas to the body or save it
+                document.body.appendChild(canvas);
+                // To save the screenshot, you can use the following code
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL();
+                link.download = 'screenshot.png';
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

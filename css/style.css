@@ -161,7 +161,8 @@ header {
 }
 
 .content-list section {
-    height: 630px;
+    height: 800px;
+    min-height: 94vh;
     width: 99%;
     border-radius: 18px;
     /* border: 2PX solid rgb(4, 4, 35); */
@@ -170,15 +171,119 @@ header {
 }
 
 .iamMain {
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-    margin-top: 3px;
     border-radius: 10px;
-    background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
+    /* background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%); */
 }
+
+.urls-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 92%;
+    width: 70%;
+    
+
+}
+
+.urls {
+    height: 88%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+     border: 1px solid rgb(179, 178, 185);
+    overflow-y:auto;
+}
+::-webkit-scrollbar {
+    width: 10px;
+ 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 80px;
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    
+    background: #dcd7d7; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+   
+    background: #cac2c2; 
+  }
+
+
+.serach-urls {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 10px;
+
+
+}
+
+.serach-urls input {
+    width: 60%;
+    height: 70px;
+    border-radius: 10px;
+    font-size: x-large;
+    padding-left: 10px;
+    border-radius: 50px;
+    box-shadow: 1px 0px 1px #020024;
+    border: 1px solid #888794;
+}
+
+.ul-outer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    border-radius: 5px;
+    list-style: none;
+    width: 80%;
+    background: #f9fafb;
+    border: 1px solid rgb(186, 176, 176);
+    color: rgb(127, 119, 119);
+    font-size: x-large;
+    margin-top: 13px;
+}
+
+.ul-outer li {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ul-outer button {
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    width: 70px;
+}
+
+.ul-outer button:hover {
+    background: rgb(143, 143, 208);
+    
+    transition: all 0.1s ease-in;
+}
+
+
+
 
 /***************************************************************** Footer **********************************************************************/
 footer {
@@ -384,6 +489,15 @@ footer {
 
 
     }
+    .urls-page {
+        width: 90%;
+    }
+
+    .serach-urls input{
+        width: 100%;
+ 
+    }
+
 
     .urlSaver {
         padding-top: 10px;
@@ -421,7 +535,7 @@ footer {
 
     .footer-content {
 
-        height: 1100px;
+        height: 550px;
         display: grid;
         margin: 0;
         width: 100%;

@@ -1,0 +1,389 @@
+.dialgue {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(9, 4, 17, 0.5);
+    display: none;
+    align-items: center;
+    /* Ensure content is centered */
+    justify-content: center;
+    /* Ensure content is centered */
+    top: 0;
+    left: 0;
+    /* Ensure it spans the full width */
+    z-index: 1000;
+    /* Ensure it appears above other content */
+}
+
+.activeDialog {
+    display: flex;
+    /* Changed from block to flex to maintain centering */
+}
+
+
+.activeDialogClose {
+    display: none;
+    /* Changed from block to flex to maintain centering */
+}
+
+
+.dialogue-content {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 50%;
+    background: white;
+    border-radius: 10px;
+    padding-left: 20px;
+     padding-right: 20px;
+     padding-top: 20px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Modal styles */
+.modal {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a202c;
+}
+
+.btn-toggle,
+.btn-submit {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-dialog {
+    position: absolute;
+    width: 40px;
+    height: 33px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid rgb(225, 214, 214);
+    top: 10px;
+    right: 10px;
+    font-size: large;
+}
+
+.close-dialog:hover {
+    background-color: #c7cacf;
+    transition: all 0.1s ease-in;
+}
+
+.btn-toggle:hover,
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Modal content */
+.modal-content {
+    height: 100%;
+}
+
+/* Input styling */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-label {
+    display: block;
+
+}
+
+/* Container for input tags */
+.input-tags {
+    border: 1px solid rgb(225, 215, 215);
+    width: 100%;
+    /* Full width on small screens */
+    max-width: 800px;
+    /* Maximum width */
+    min-height: 80px;
+    padding: 10px;
+    /* Added more padding for better spacing */
+    border-radius: 5px;
+    display: flex;
+    /* Flexbox layout for better alignment */
+    flex-direction: column;
+
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+/* Individual tags */
+.tags {
+    background: rgb(237, 232, 232);
+    color: gray;
+    border-radius: 6px;
+    padding: 5px 10px;
+    /* Adjusted padding */
+    display: inline-flex;
+    /* Inline flex for better alignment */
+    margin: 4px 8px 4px 0;
+    /* Margin adjustments */
+    font-size: 14px;
+    /* Adjust font size for better readability */
+}
+
+/* Keyword name styling */
+.keywords-name {
+    color: rgb(172, 159, 159);
+    margin-bottom: 10px;
+    font-size: 16px;
+    /* Adjust font size for better visibility */
+}
+
+/* Keywords tags styling */
+.keywords-tags {
+    color: rgba(17, 75, 223, 0.8);
+    font-size: 14px;
+    /* Ensure consistency in font size */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .input-tags {
+        padding: 8px;
+        /* Adjust padding on smaller screens */
+    }
+
+    .tags {
+        font-size: 12px;
+        /* Smaller font size for smaller screens */
+        padding: 4px 8px;
+        /* Adjust padding */
+    }
+
+    .keywords-name,
+    .keywords-tags {
+        font-size: 14px;
+        /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .input-tags {
+        min-height: auto;
+        /* Remove minimum height for very small screens */
+        padding: 6px;
+        /* Reduce padding */
+    }
+
+    .tags {
+        font-size: 10px;
+        /* Further reduce font size */
+        padding: 3px 6px;
+        /* Adjust padding */
+        margin: 2px 4px 2px 0;
+        /* Adjust margin */
+    }
+
+    .keywords-name,
+    .keywords-tags {
+        font-size: 12px;
+        /* Adjust font size */
+    }
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid hsl(0, 15%, 88%);
+    border-radius: 5px;
+    background: #fff;
+
+    box-sizing: border-box;
+}
+
+.addKeyword {
+    margin-top: 5px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.add-Keyword {
+    height: 100%;
+    font-size: medium;
+    height: 40px;
+    width: 40%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-left: 10px;
+    border: none;
+    border: 1px solid #f5f1f1;
+    background: #ede8e8;
+    outline: none;
+}
+
+.addTags:hover {
+    background-color: #0056b3;
+
+}
+
+.addTags {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+   
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-input {
+    margin-right: 5px;
+}
+
+/* Links */
+.forgot-password,
+.create-account {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.create-account:hover {
+    text-decoration: underline;
+}
+
+/* Flexbox utility classes */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.register-link {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Responsive styles */
+
+/* For devices with max-width 768px (tablets and below) */
+@media (max-width: 768px) {
+    .dialogue-content {
+        height: 80%;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .btn-toggle,
+    .btn-submit {
+        right: 20px;
+        bottom: 20px;
+        padding: 8px 16px;
+    }
+
+    .modal {
+        padding: 20px;
+    }
+
+    .modal-header {
+        margin-bottom: 15px;
+    }
+
+    .modal-title {
+        font-size: 1rem;
+    }
+
+    .input-field {
+        padding: 8px;
+    }
+
+    .register-link {
+        font-size: 0.75rem;
+    }
+
+    .add-Keyword {
+        
+        width: 70%;
+         
+    }
+
+}
+
+/* For devices with max-width 480px (mobile phones) */
+@media (max-width: 480px) {
+    .dialogue-content {
+        height: 60%;
+        width: 90%;
+    }
+
+    .add-Keyword {
+        
+        width: 70%;
+         
+    }
+    .keywords-name {
+        font-size: large;
+    }
+
+    .btn-toggle,
+    .btn-submit {
+        right: 10px;
+        bottom: 10px;
+        padding: 8px 12px;
+    }
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-header {
+        margin-bottom: 10px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .input-field {
+        padding: 6px;
+        height: 45px;
+        font-size: large;
+    }
+
+    .register-link {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width:600px) {
+
+}

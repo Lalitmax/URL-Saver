@@ -4,24 +4,12 @@
     
 
 /* Button styling */
-.btn-toggle, .btn-submit {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-toggle:hover, .btn-submit:hover {
-    background-color: #0056b3;
-}
-
+ 
  
 
 /* Modal styling */
-.modal {
-    position: fixed;
+/* .modal {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -33,11 +21,11 @@
     z-index: 1000;
     display: none;
     padding: 20px;
-}
+} */
 
-.modal.show {
+/* .modal.show {
     display: block;
-}
+} */
 
 /* Modal header */
 .modal-header {

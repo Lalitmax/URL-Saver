@@ -10,7 +10,8 @@
     <title>URLSaver</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/addUrlDialog/addUrl.css">
+    <!-- <link rel="stylesheet" href="/addUrlDialog/addUrl.css"> -->
+    <link rel="stylesheet" href="/addUrlDialog/dialogue.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
@@ -28,7 +29,7 @@
 
                     <ul>
                         <li><a href="/index.html">Home</a></li>
-                        <li><a onclick="toggleModal()" href="#">Add</a></li>
+                        <li><a class="openUrlSaveDialog" href="#">Add</a></li>
                         <li><a href="#">Edit URL</a></li>
                     </ul>
 
@@ -40,7 +41,7 @@
 
                     </div>
                 </div>
-                <i onclick="myMenu()" class='bx bx-menu' id="menu-icon"></i>
+                <i class='bx bx-menu' id="menu-icon"></i>
 
             </nav>
 
@@ -52,7 +53,19 @@
         <div class="content-list">
             <section class="hero-section">
                 <div class="iamMain">
-                    <h1 style="color: white;">I Am Main</h1>
+
+                    <div class="urls-page">
+
+                        <div class="serach-urls">
+                            <input type="text" placeholder="Search urls">
+                        </div>
+                        <div class="urls">
+                            <ul class="ul-outer">
+                                <li>https://www.wikipedia.org/ <button>Copy</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
 
             </section>
@@ -61,27 +74,43 @@
         </div>
     </div>
     <!-- ********************************************* Dialgo add RUl Content ***********************************************************-->
-    <div class="modal">
-        <div class="modal-header">
-            <h3 class="modal-title">Add</h3>
-        </div>
-        <div class="modal-body">
-            <div class="modal-content">
-                <div class="input-group">
-                    <label for="text" class="input-label">URL</label>
-                    <input type="text" id="email" class="input-field" placeholder="Paste URL" required>
-                </div>
-                <div class="input-group">
-                    <label for="password" class="input-label">Add keyword</label>
-                    <input type="password" id="password" class="input-field" placeholder="Add Keyword">
-                </div>
 
-                <button class="btn-submit">Save</button>
 
+
+    <div class="dialgue">
+        <div class="dialogue-content">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Add</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <div class="input-group">
+                            <label for="text" class="input-label">URL</label>
+                            <input type="text"  class="input-field url-input" placeholder="Paste URL">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-tags">
+                                <div class="keywords-name">Add keyword</div>
+                                <div class="keywords-tags">
+                                     
+                                </div>
+                                <div class="addKeyword">
+                                    <input type="text" class="add-Keyword addKey-word-input" placeholder="Add Keyword">
+                                    <button class="addTags">Add</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <button class="close-dialog">X</button>
+                        <button class="btn-submit">Save</button>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 
     <!-- ********************************************* Footer Content ***********************************************************-->
 
@@ -123,13 +152,10 @@
 
 
 
-    <script src="./js/script.js"></script>
-    <script>
-        function toggleModal() {
-            const modal = document.querySelector('.modal');
-            modal.classList.toggle('show');
-        }
-    </script>
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/addUrl.js"></script>
+    
+
 
 </body>
 
