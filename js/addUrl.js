@@ -51,7 +51,7 @@ btnSave.addEventListener('click', () => {
     if (urlInput.value.length > 0) {
         urls.push({ url: urlInput.value, keywords: tags });
         urlInput.value = "";
-        showAllUrls();
+        showAllUrls.showAllUrls();
         tags = [];
         showTags();
         console.log(urls)

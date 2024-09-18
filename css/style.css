@@ -90,6 +90,7 @@ header {
     /* margin: 0 1rem; */
     align-items: center;
     justify-content: space-between;
+    position: relative;
     gap: 0.4rem;
 }
 
@@ -100,7 +101,7 @@ header {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
-
+ 
     height: 40px;
     width: 90px;
     border: 1px solid var(--second-text-color);
@@ -137,6 +138,28 @@ header {
 .dark:hover {
 
     box-shadow: 0 0 .7rem var(--second-text-color);
+}
+
+ 
+.profile {
+    height: 40px;
+    position: absolute;
+    background: #ebe5e5;
+    /* right: 0; */
+    width: 100px;
+    right: 60px;
+    top: 8px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+    border-radius: 10px;
+     
+}
+
+.active2 {
+    display: flex;
 }
 
 /********************************************************* mian-content *****************************************************/
