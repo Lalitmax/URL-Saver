@@ -144,11 +144,12 @@ header {
 .profile {
     height: 40px;
     position: absolute;
-    background: #ebe5e5;
-    /* right: 0; */
+    background: #ffffff;
+  
     width: 100px;
     right: 60px;
-    top: 8px;
+    top: 15px;
+    
     display: flex;
     align-content: center;
     justify-content: center;
@@ -157,7 +158,7 @@ header {
     border-radius: 10px;
      
 }
-
+ 
 .active2 {
     display: flex;
 }
@@ -250,24 +251,22 @@ header {
   }
 
 
-.serach-urls {
+  .serach-urls {
     width: 80%;
     text-align: center;
     margin-bottom: 10px;
-
-
 }
 
 .serach-urls input {
     width: 60%;
-    height: 70px;
-    border-radius: 10px;
-    font-size: x-large;
-    padding-left: 10px;
+    height: 70px; /* This may be adjusted based on your design */
     border-radius: 50px;
+    font-size: x-large; /* This can be changed based on your preference */
+    padding-left: 10px;
     box-shadow: 1px 0px 1px #020024;
     border: 1px solid #888794;
 }
+
 
 .ul-outer {
     display: flex;
@@ -278,7 +277,7 @@ header {
     list-style: none;
     width: 80%;
     background: #f9fafb;
-    border: 1px solid rgb(186, 176, 176);
+    /* border: 1px solid rgb(186, 176, 176); */
     color: rgb(127, 119, 119);
     font-size: x-large;
     margin-top: 13px;
@@ -291,22 +290,74 @@ header {
     justify-content: space-between;
 }
 
-.ul-outer button {
-    height: 40px;
+.copy-btn {
+    height: 47px;
     border-radius: 10px;
     cursor: pointer;
+    font-weight:bolder;
+    font-size: 15px;
     border: none;
-    width: 70px;
+    color: white;
+    width: 78px;
+    background: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
+ 
+ }
+
+
+.edit-btn {
+    height: 47px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight:bolder;
+    font-size: 15px;
+    border: none;
+    color: white;
+    width: 78px;
+    display: none;
+ }
+.ul-outer .copy-btn:hover {
+    background: linear-gradient(90deg, #3d3985 0%, rgb(84, 101, 134) 60%, var(--main-color) 100%);;
+    transition: all 0.1s ease-in;
 }
 
-.ul-outer button:hover {
-    background: rgb(143, 143, 208);
-    
+.edit-btn {
+    background-color: rgb(232, 35, 35);
+    color: white;
+}
+
+.active-remove-btn {
+    display: block; /* Change to block to show edit buttons */
+}
+
+.active-copy-btn {
+    display: none; /* Change to block to show copy buttons */
+}
+
+.edit-btn:hover {
+    background: rgb(231, 86, 86);
     transition: all 0.1s ease-in;
 }
 
 
-
+.url-name {
+    width: 88%;
+   
+    height: 47px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    grid-column: span 6;
+    background-color: #F9FAFB;
+    border: 1px solid #D1D5DB;
+    color: #6B7280;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+    font-family: sans-serif;
+    width: 100%;
+    margin-right: 5px;
+    
+}
 
 /***************************************************************** Footer **********************************************************************/
 footer {
@@ -504,7 +555,7 @@ footer {
 
 
 
-@media (max-width:600px) {
+@media (max-width:650px) {
     .urlSaver .iii {
         display: flex;
         gap: 1rem;
@@ -514,6 +565,12 @@ footer {
     }
     .urls-page {
         width: 90%;
+    }
+    .profile {
+        left: 0;
+        height: 32px;
+        top:-34px;
+        width: 80px;
     }
 
     .serach-urls input{

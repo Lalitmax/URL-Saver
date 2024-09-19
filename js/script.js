@@ -1,4 +1,4 @@
-import urls from './data.js';
+// import urls from './data.js';
 
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.right-menu');
@@ -7,6 +7,8 @@ let closeDialog = document.querySelector('.close-dialog');
 let btnSave = document.querySelector('.openUrlSaveDialog');
 let btnSubmit = document.querySelector('#menu-icon');
 let profile = document.querySelector('.profile');
+let urlOuter = document.querySelector('.ul-outer');
+let removeUrl = document.querySelector('.remove-url');
 
 // Toggle menu icon and navbar
 btnSubmit.onclick = () => {
@@ -14,7 +16,7 @@ btnSubmit.onclick = () => {
     navbar.classList.toggle('active');
 }
 
- 
+
 
 btnSave.onclick = function () {
     const isLogged = localStorage.getItem("isLogged");
@@ -26,28 +28,101 @@ btnSave.onclick = function () {
     } else {
         alert("Login first");
     }
+    removeUrl.style.color = "white";
+
+    if (btnSave.style.color === "rgb(162, 184, 238)") {
+        btnSave.style.color = "white";
+    } else {
+        btnSave.style.color = "rgb(162, 184, 238)";
+    }
 
 
 }
 
 closeDialog.onclick = function () {
     const modal = document.querySelector('.dialgue');
+
     modal.classList.remove('activeDialog');
     modal.classList.add('activeDialogClose');
+    btnSave.style.color = "white";
+
+
 
 }
+
+
+removeUrl.onclick = function () {
+    // Select all edit and copy buttons
+    const editBtns = document.querySelectorAll('.edit-btn');
+    const copyBtns = document.querySelectorAll('.copy-btn');
+
+    // Loop through each button and toggle classes
+    editBtns.forEach(editBtn => {
+        editBtn.classList.toggle('active-remove-btn');
+    });
+
+    copyBtns.forEach(copyBtn => {
+        copyBtn.classList.toggle('active-copy-btn');
+    });
+
+    if (removeUrl.style.color === "rgb(162, 184, 238)") {
+        removeUrl.style.color = "white";
+    } else {
+        removeUrl.style.color = "rgb(162, 184, 238)";
+    }
+
+}
+
+
+
 
 // Show all URLs
 function showAllUrls() {
-    const allTags = urls.map(url => {
-        return `<ul class="ul-outer">
-                    <li>${url.url} <button>Copy</button></li>
-                </ul>`;
-    }).join("");
-    ulOuter.innerHTML = allTags;
+    let urls = JSON.parse(localStorage.getItem('urls'));
+    const isLogged = localStorage.getItem("isLogged");
+
+    if (urls && isLogged === 'true') {
+        const allTags = urls.map((url) => {
+            return `<ul class="ul-outer">
+                    <li id="${url.id}">
+                    <span class="url-name">${url.url.length > 35 ? url.url.slice(0, 35) + '...' : url.url}</span> 
+                            <div class = "copy-remove-btn">
+                                <button class = "copy-btn">Copy</button>
+                                <button class = "edit-btn">Remove</button>
+                            </div>
+                        </li>
+                    </ul>`;
+        }).join("");
+        ulOuter.innerHTML = allTags;
+    }
+
 }
 
-// Handle user login
+// ***************************** Edit-btn******************************************
+
+ulOuter.addEventListener('click', (e) => {
+    const li = e.target.closest('li');// Get the closest li element
+
+    if (e.target.classList.contains('edit-btn')) {
+        console.log("Edit button clicked:", li.id, li.textContent);
+
+        let urls = JSON.parse(localStorage.getItem('urls'));
+        console.log(urls)
+
+        const urlId = parseInt(li.id);
+
+        urls = urls.filter(url => url.id !== urlId);
+        localStorage.setItem('urls', JSON.stringify(urls));
+        showAllUrls();
+
+    } else if (e.target.classList.contains('copy-btn')) {
+        console.log("Copy button clicked:", li.id, li.textContent);
+        // Add your copy logic here
+    }
+});
+
+
+// *******************************Handle user login************************
 function loginFunc() {
     const isLogged = localStorage.getItem("isLogged");
     if (isLogged === "true") {
@@ -101,6 +176,8 @@ profile.onclick = () => {
 function addLoggedBtnClickHandler(button) {
     button.onclick = handleLoggedBtnClick;
 }
+
+
 
 loginFunc();
 showAllUrls();

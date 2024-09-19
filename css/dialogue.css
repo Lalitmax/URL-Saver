@@ -70,7 +70,9 @@
     right: 25px;
     bottom: 25px;
     padding: 10px 20px;
-    background-color: #007bff;
+    /* background-color: #007bff; */
+    background: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);;
+
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -87,6 +89,8 @@
     top: 10px;
     right: 10px;
     font-size: large;
+    color: white;
+    background: linear-gradient(90deg, #484581 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);;
 }
 
 .close-dialog:hover {
@@ -224,6 +228,7 @@
     display: flex;
     align-content: center;
     justify-content: center;
+    
 }
 
 .add-Keyword {
@@ -232,6 +237,7 @@
     height: 40px;
     width: 40%;
     border-bottom-left-radius: 5px;
+    
     border-top-left-radius: 5px;
     padding-left: 10px;
     border: none;
@@ -241,12 +247,13 @@
 }
 
 .addTags:hover {
-    background-color: #0056b3;
+    background: linear-gradient(90deg, #3b3a56 0%, rgb(52, 78, 128) 60%, var(--main-color) 100%);;
+
 
 }
 
 .addTags {
-    background-color: #007bff;
+    background: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);;
     color: #fff;
     border: none;
    
