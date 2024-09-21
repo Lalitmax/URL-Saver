@@ -61,7 +61,7 @@ btnSave.addEventListener('click', () => {
             tags = [];
             showTags();
             localStorage.setItem('urls',JSON.stringify(urls));
-            showAllUrls.showAllUrls();
+            showAllUrls.showAllUrls(urls);
 
         }else {
             urls = [];
@@ -73,7 +73,7 @@ btnSave.addEventListener('click', () => {
             tags = [];
             showTags();
             localStorage.setItem('urls',JSON.stringify(urls));
-            showAllUrls.showAllUrls();
+            showAllUrls.showAllUrls(urls);
 
         }
 

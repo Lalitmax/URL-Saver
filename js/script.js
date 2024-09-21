@@ -9,7 +9,9 @@ let btnSubmit = document.querySelector('#menu-icon');
 let profile = document.querySelector('.profile');
 let urlOuter = document.querySelector('.ul-outer');
 let removeUrl = document.querySelector('.remove-url');
+let urlsData = JSON.parse(localStorage.getItem('urls'));
 
+let serachUrls = document.querySelector('.find-urls');
 // Toggle menu icon and navbar
 btnSubmit.onclick = () => {
     menuIcon.classList.toggle('bx-x');
@@ -73,12 +75,28 @@ removeUrl.onclick = function () {
 
 }
 
+// ************************************************************Search url******************************************************************
 
+serachUrls.addEventListener('input', () => {
+    const value = document.querySelector('.find-urls').value;
+    // console.log(value);
 
+    let foundUrls = [];
+    urlsData.map((item) => {
+        let flag = false;
+        if (item.keywords.join(" ").includes(value) || item.url.includes(value)) {
+            flag = true;
+        }
+        if (flag == true) {
+
+            foundUrls.push(item);
+        }
+    })
+    showAllUrls(foundUrls);
+})
 
 // Show all URLs
-function showAllUrls() {
-    let urls = JSON.parse(localStorage.getItem('urls'));
+function showAllUrls(urls) {
     const isLogged = localStorage.getItem("isLogged");
 
     if (urls && isLogged === 'true') {
@@ -93,7 +111,18 @@ function showAllUrls() {
                         </li>
                     </ul>`;
         }).join("");
+
+
         ulOuter.innerHTML = allTags;
+
+        // Select all .ul-outer elements and add the visible class after a delay
+        setTimeout(() => {
+            const ulElements = document.querySelectorAll('.ul-outer');
+            ulElements.forEach(element => {
+                element.classList.add('visible');
+            });
+        }, 200); // 200 ms delay
+
     }
 
 }
@@ -113,11 +142,22 @@ ulOuter.addEventListener('click', (e) => {
 
         urls = urls.filter(url => url.id !== urlId);
         localStorage.setItem('urls', JSON.stringify(urls));
-        showAllUrls();
+        showAllUrls(urls);
 
     } else if (e.target.classList.contains('copy-btn')) {
-        console.log("Copy button clicked:", li.id, li.textContent);
-        // Add your copy logic here
+        let copiedBtn  = e.target.closest('button.copy-btn');
+        console.log(copiedBtn);
+        copiedBtn.classList.add('copy-btn-copied')
+        copiedBtn.textContent = "Copied!"
+        let urlTextElement = li.querySelector('span.url-name');
+        console.log(urlTextElement)
+        navigator.clipboard.writeText(urlTextElement.textContent)
+      
+        setTimeout(()=>{
+            copiedBtn.classList="copy-btn"
+            copiedBtn.textContent = "Copy"
+
+        },900)
     }
 });
 
@@ -179,7 +219,10 @@ function addLoggedBtnClickHandler(button) {
 
 
 
-loginFunc();
-showAllUrls();
+
+(() => {
+    showAllUrls(urlsData);
+    loginFunc();
+})()
 
 export default { showAllUrls, loginFunc };

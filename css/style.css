@@ -101,7 +101,7 @@ header {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
- 
+
     height: 40px;
     width: 90px;
     border: 1px solid var(--second-text-color);
@@ -140,25 +140,25 @@ header {
     box-shadow: 0 0 .7rem var(--second-text-color);
 }
 
- 
+
 .profile {
     height: 40px;
     position: absolute;
     background: #ffffff;
-  
+
     width: 100px;
     right: 60px;
     top: 15px;
-    
+
     display: flex;
     align-content: center;
     justify-content: center;
     cursor: pointer;
     display: none;
     border-radius: 10px;
-     
+
 }
- 
+
 .active2 {
     display: flex;
 }
@@ -211,7 +211,7 @@ header {
     align-items: center;
     height: 92%;
     width: 70%;
-    
+
 
 }
 
@@ -224,34 +224,35 @@ header {
     padding-top: 20px;
     padding-bottom: 20px;
     align-items: center;
-     border: 1px solid rgb(179, 178, 185);
-    overflow-y:auto;
+    border: 1px solid rgb(179, 178, 185);
+    overflow-y: auto;
 }
+
 ::-webkit-scrollbar {
     width: 10px;
- 
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     border-radius: 80px;
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    
-    background: #dcd7d7; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-   
-    background: #cac2c2; 
-  }
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+
+    background: #dcd7d7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+    background: #cac2c2;
+}
 
 
-  .serach-urls {
+.serach-urls {
     width: 80%;
     text-align: center;
     margin-bottom: 10px;
@@ -259,9 +260,11 @@ header {
 
 .serach-urls input {
     width: 60%;
-    height: 70px; /* This may be adjusted based on your design */
+    height: 70px;
+    /* This may be adjusted based on your design */
     border-radius: 50px;
-    font-size: x-large; /* This can be changed based on your preference */
+    font-size: x-large;
+    /* This can be changed based on your preference */
     padding-left: 10px;
     box-shadow: 1px 0px 1px #020024;
     border: 1px solid #888794;
@@ -277,11 +280,21 @@ header {
     list-style: none;
     width: 80%;
     background: #f9fafb;
-    /* border: 1px solid rgb(186, 176, 176); */
     color: rgb(127, 119, 119);
     font-size: x-large;
     margin-top: 13px;
+    opacity: 0;
+    /* Start with opacity 0 */
+    transition: opacity 0.5s ease;
+    /* Add transition effect */
 }
+
+.ul-outer.visible {
+    opacity: 1;
+    /* Fully visible */
+}
+
+
 
 .ul-outer li {
     width: 90%;
@@ -294,43 +307,42 @@ header {
     height: 47px;
     border-radius: 10px;
     cursor: pointer;
-    font-weight:bolder;
+    font-weight: bolder;
     font-size: 15px;
     border: none;
     color: white;
     width: 78px;
-    background: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
  
- }
+    background: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
+
+}
 
 
 .edit-btn {
     height: 47px;
     border-radius: 10px;
     cursor: pointer;
-    font-weight:bolder;
+    font-weight: bolder;
     font-size: 15px;
     border: none;
     color: white;
     width: 78px;
     display: none;
- }
-.ul-outer .copy-btn:hover {
-    background: linear-gradient(90deg, #3d3985 0%, rgb(84, 101, 134) 60%, var(--main-color) 100%);;
-    transition: all 0.1s ease-in;
 }
-
+ 
 .edit-btn {
     background-color: rgb(232, 35, 35);
     color: white;
 }
 
 .active-remove-btn {
-    display: block; /* Change to block to show edit buttons */
+    display: block;
+    /* Change to block to show edit buttons */
 }
 
 .active-copy-btn {
-    display: none; /* Change to block to show copy buttons */
+    display: none;
+    /* Change to block to show copy buttons */
 }
 
 .edit-btn:hover {
@@ -338,10 +350,16 @@ header {
     transition: all 0.1s ease-in;
 }
 
+.copy-btn-copied {
+    background: linear-gradient(90deg, #5fe855 0%, rgb(84, 134, 111) 60%, var(--main-color) 100%);
+    border: 1px solid rgb(5, 126, 70);
+    color: white;
+    transform: scale(0.96); /* Slightly enlarge the button */
+ }
 
 .url-name {
     width: 88%;
-   
+
     height: 47px;
     display: flex;
     align-items: center;
@@ -356,7 +374,7 @@ header {
     font-family: sans-serif;
     width: 100%;
     margin-right: 5px;
-    
+
 }
 
 /***************************************************************** Footer **********************************************************************/
@@ -563,19 +581,24 @@ footer {
 
 
     }
+    .ul-outer {
+        width: 100%;
+    }
+
     .urls-page {
         width: 90%;
     }
+
     .profile {
         left: 0;
         height: 32px;
-        top:-34px;
+        top: -34px;
         width: 80px;
     }
 
-    .serach-urls input{
+    .serach-urls input {
         width: 100%;
- 
+
     }
 
 
