@@ -77,23 +77,30 @@ removeUrl.onclick = function () {
 
 // ************************************************************Search url******************************************************************
 
+
 serachUrls.addEventListener('input', () => {
-    const value = document.querySelector('.find-urls').value;
-    // console.log(value);
+    const value = document.querySelector('.find-urls').value.toLowerCase();
     urlsData = JSON.parse(localStorage.getItem('urls'));
     let foundUrls = [];
+
     urlsData.map((item) => {
         let flag = false;
-        if (item.keywords.join(" ").includes(value) || item.url.includes(value)) {
+
+        const keywords = item.keywords.join(" ").toLowerCase();
+        const url = item.url.toLowerCase();
+
+        if (keywords.includes(value) || url.includes(value)) {
             flag = true;
         }
-        if (flag == true) {
 
+        if (flag) {
             foundUrls.push(item);
         }
-    })
+    });
+
     showAllUrls(foundUrls);
-})
+});
+
 
 // Show all URLs
 function showAllUrls(urls) {
