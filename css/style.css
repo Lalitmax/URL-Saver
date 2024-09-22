@@ -20,6 +20,7 @@ header {
     width: 100%;
     overflow: hidden;
     display: flex;
+    z-index: 1;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
@@ -224,7 +225,7 @@ header {
     padding-top: 20px;
     padding-bottom: 20px;
     align-items: center;
-    border: 1px solid rgb(179, 178, 185);
+    /* border: 1px solid rgb(179, 178, 185); */
     overflow-y: auto;
 }
 
@@ -253,21 +254,43 @@ header {
 
 
 .serach-urls {
-    width: 80%;
+    width: 89%;
     text-align: center;
+    position: relative;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .serach-urls input {
     width: 60%;
-    height: 70px;
-    /* This may be adjusted based on your design */
+
+    height: 59px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
     border-radius: 50px;
-    font-size: x-large;
-    /* This can be changed based on your preference */
-    padding-left: 10px;
-    box-shadow: 1px 0px 1px #020024;
-    border: 1px solid #888794;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-size: 20px;
+
+
+}
+
+.search-icon {
+    position: absolute;
+    right: 20%;
+     height: 100%;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-color: rgb(32, 4, 59);
+    background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
+
 }
 
 
@@ -283,11 +306,14 @@ header {
     color: rgb(127, 119, 119);
     font-size: x-large;
     margin-top: 13px;
-    opacity: 0;
-    /* Start with opacity 0 */
-    transition: opacity 0.5s ease;
-    /* Add transition effect */
+    /* border: 1px solid rgb(241, 234, 234); */
+
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease; /* Add transition effect */
+
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
+
 
 .ul-outer.visible {
     opacity: 1;
@@ -312,9 +338,8 @@ header {
     border: none;
     color: white;
     width: 78px;
- 
-    background: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
 
+    background-color: #007cff;
 }
 
 
@@ -329,7 +354,7 @@ header {
     width: 78px;
     display: none;
 }
- 
+
 .edit-btn {
     background-color: rgb(232, 35, 35);
     color: white;
@@ -351,11 +376,13 @@ header {
 }
 
 .copy-btn-copied {
-    background: linear-gradient(90deg, #5fe855 0%, rgb(84, 134, 111) 60%, var(--main-color) 100%);
+    background-image: linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%);
+        
     border: 1px solid rgb(5, 126, 70);
     color: white;
-    transform: scale(0.96); /* Slightly enlarge the button */
- }
+    transform: scale(0.96);
+    /* Slightly enlarge the button */
+}
 
 .url-name {
     width: 88%;
@@ -366,7 +393,7 @@ header {
     /* justify-content: center; */
     grid-column: span 6;
     background-color: #F9FAFB;
-    border: 1px solid #D1D5DB;
+    border: 1px solid #edeff3;
     color: #6B7280;
     font-size: 1.25rem;
     border-radius: 0.5rem;
@@ -581,8 +608,10 @@ footer {
 
 
     }
+   
+
     .ul-outer {
-        width: 100%;
+        width: 99%;
     }
 
     .urls-page {
@@ -601,6 +630,9 @@ footer {
 
     }
 
+    .search-icon {
+        right: 0%;
+    }
 
     .urlSaver {
         padding-top: 10px;
@@ -791,6 +823,50 @@ footer {
         width: 83%;
 
     }
+    .url-name {
+        font-size: 15px;
+    }
+    .copy-btn {
+        height: 40px;
+        width: 60px;
+    }
+    .edit-btn {
+        height: 40px;
+        width: 60px;
+        font-size: 12px;
+    }
+    .serach-urls input {
+        /* width: 60%; */
+    
+        height: 50px;
+    
+    }
+    .urls {
+        padding: 0;
+    }
 
+    
+}
+
+
+/* Url meadi */
+@media (max-width:923px) {
+    .ul-outer {
+        height: 70px;
+    }
+    .ul-outer li{
+        width: 95%;
+    }
+    .url-name{
+        padding-left: 10px;
+        width: 100%;
+        overflow: hidden;
+        height: 40px;
+    }
+    
+   
+    .urls-page {
+        width: 96%;
+    }
 
 }

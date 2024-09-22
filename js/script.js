@@ -80,7 +80,7 @@ removeUrl.onclick = function () {
 serachUrls.addEventListener('input', () => {
     const value = document.querySelector('.find-urls').value;
     // console.log(value);
-
+    urlsData = JSON.parse(localStorage.getItem('urls'));
     let foundUrls = [];
     urlsData.map((item) => {
         let flag = false;
@@ -142,22 +142,28 @@ ulOuter.addEventListener('click', (e) => {
 
         urls = urls.filter(url => url.id !== urlId);
         localStorage.setItem('urls', JSON.stringify(urls));
+        const editBtns = document.querySelectorAll('.edit-btn');
+
+        // Loop through each button and toggle classes
+        editBtns.forEach(editBtn => {
+            editBtn.classList.toggle('active-remove-btn');
+        });
         showAllUrls(urls);
 
     } else if (e.target.classList.contains('copy-btn')) {
-        let copiedBtn  = e.target.closest('button.copy-btn');
+        let copiedBtn = e.target.closest('button.copy-btn');
         console.log(copiedBtn);
         copiedBtn.classList.add('copy-btn-copied')
         copiedBtn.textContent = "Copied!"
         let urlTextElement = li.querySelector('span.url-name');
         console.log(urlTextElement)
         navigator.clipboard.writeText(urlTextElement.textContent)
-      
-        setTimeout(()=>{
-            copiedBtn.classList="copy-btn"
+
+        setTimeout(() => {
+            copiedBtn.classList = "copy-btn"
             copiedBtn.textContent = "Copy"
 
-        },900)
+        }, 900)
     }
 });
 
@@ -189,7 +195,8 @@ function loginFunc() {
         newLoginButton.style.height = "50px";
         newLoginButton.style.width = "50px";
         newLoginButton.style.borderRadius = "50px";
-        newLoginButton.style.background = "linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%)";
+
+        newLoginButton.style.backgroundImage = "linear-gradient(90deg, #020024 0%, rgb(33, 57, 101) 60%, var(--main-color) 100%)";
         newLoginButton.style.border = "1px solid white";
         newLoginButton.style.color = "white";
         newLoginButton.style.cursor = "pointer";
