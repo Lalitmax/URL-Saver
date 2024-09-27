@@ -159,13 +159,30 @@ ulOuter.addEventListener('click', (e) => {
 
     } else if (e.target.classList.contains('copy-btn')) {
         let copiedBtn = e.target.closest('button.copy-btn');
-        console.log(copiedBtn);
+        
         copiedBtn.classList.add('copy-btn-copied')
         copiedBtn.textContent = "Copied!"
         let urlTextElement = li.querySelector('span.url-name');
-        console.log(urlTextElement)
-        navigator.clipboard.writeText(urlTextElement.textContent)
+  
+        let copyId = parseInt(li.id);  
+        let s = 0;
+        let end = urlsData.length - 1;
+        let textContentCopy = "";
 
+        // binary search
+         while (s <= end) {
+            let mid = Math.floor((s + end) / 2);  
+            if (urlsData[mid].id === copyId) {
+                textContentCopy = urlsData[mid].url;  
+                break;
+            } else if (urlsData[mid].id < copyId) {
+                s = mid + 1;  
+            } else {
+                end = mid - 1;  
+            }
+        }
+
+        navigator.clipboard.writeText(textContentCopy);
         setTimeout(() => {
             copiedBtn.classList = "copy-btn"
             copiedBtn.textContent = "Copy"
